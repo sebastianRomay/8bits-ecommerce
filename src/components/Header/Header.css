@@ -1,0 +1,20 @@
+.link-header {
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: grey;
+}
+
+.link-header:hover {
+    color: white;
+}
+
+.icono-header {
+    font-size: 1.3rem;
+    color: grey;
+}
+
+.icono-header:hover {
+    color: white;
+    cursor: pointer;
+}
