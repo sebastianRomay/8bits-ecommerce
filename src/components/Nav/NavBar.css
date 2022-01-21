@@ -1,8 +1,22 @@
+@font-face {
+    font-family: marvel;
+    src: url(../../fonts/Tungsten-Bold.ttf);
+}
+
 .logo-nav {
     font-family: 'Press Start 2p', cursive;
     font-size: 1.1rem;
 }
 .menu-nav {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    font-family: marvel;
+}
+
+.bi-cart {
+    color: grey;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.bi-cart:hover {
+    color: white;
 }
