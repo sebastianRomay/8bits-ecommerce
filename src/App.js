@@ -1,8 +1,12 @@
 import NavBar from './components/Nav/NavBar';
 import Header from './components/Header/Header'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+
 
 const App = () => {
+
+
+
   return (
     <>
       <Header/>

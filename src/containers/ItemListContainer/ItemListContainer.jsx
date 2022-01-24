@@ -1,3 +1,4 @@
+import Count from '../../components/Count/Count';
 import './ItemListContainer.css';
 
 const ItemListContainer = (props) => {
@@ -10,8 +11,7 @@ const ItemListContainer = (props) => {
             <h5 className="card-text">$ {props.precio}</h5>
         </div>
         <div className='d-flex justify-content-center'>
-        <button className='btn btn-outline-success w-50 m-2'>Añadir al carrito</button>
-
+          <Count/>
         </div>
     </div>
   </>

@@ -20,3 +20,9 @@
 .bi-cart:hover {
     color: white;
 }
+
+p {
+    background: white;
+    border-radius: 50%;
+    font-size: .5rem;
+}
