@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# //
+En este repositorio voy a estar subiendo mis desafios entregables del curso de React JS que estoy haciendo en Coderhouse.
+Al final del curso deberia haber podido crear un Ecommerce funcional.
+
+# //
+
+
+
+
+
+Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
