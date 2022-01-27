@@ -1,7 +1,18 @@
 import Count from '../../components/Count/Count';
 import './ItemListContainer.css';
+import { useState } from 'react';
 
 const ItemListContainer = (props) => {
+  const [contador, setContador] = useState(0);
+    
+    const sumar = () => {
+        setContador(contador + 1)
+    }
+    const restar = () => {
+        setContador(contador - 1)
+    }
+
+
   return (
   <>
     <div className="card m-3">
@@ -11,7 +22,9 @@ const ItemListContainer = (props) => {
             <h5 className="card-text">$ {props.precio}</h5>
         </div>
         <div className='d-flex justify-content-center'>
-          <Count/>
+          <Count fn={sumar} texto='+' />
+          <h3>{contador}</h3>
+          <Count fn={restar} texto='-'/>
         </div>
     </div>
   </>
