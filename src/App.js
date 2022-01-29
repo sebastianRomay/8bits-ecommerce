@@ -1,6 +1,7 @@
 import NavBar from './components/Nav/NavBar';
 import Header from './components/Header/Header'
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemsList from './components/ItemsList/ItemsList';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <ItemListContainer img='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/1200px-PSX-Console-wController.png' title='PS1' precio='15000'/>
       <ItemListContainer img='https://as01.epimg.net/meristation/imagenes/2015/12/04/noticia/1449248400_549417_1532442420_sumario_normal.jpg' title='PS2' precio='18000'/>
       <ItemListContainer img='https://upload.wikimedia.org/wikipedia/commons/0/02/N64-Console-Set.png' title='Nintendo 64' precio='13000'/>
+      <ItemsList/>
       </div>
     </>
   )

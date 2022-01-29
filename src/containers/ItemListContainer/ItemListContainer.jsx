@@ -1,6 +1,7 @@
 import ItemCount from '../../components/ItemCount/ItemCount';
 import './ItemListContainer.css';
 import { useState } from 'react';
+import ItemsList from '../../components/ItemsList/ItemsList';
 
 const ItemListContainer = (props) => {
   return (
@@ -13,6 +14,7 @@ const ItemListContainer = (props) => {
         </div>
         <ItemCount initial='1' stock='5'/>
     </div>
+
   </>
   );
 };
