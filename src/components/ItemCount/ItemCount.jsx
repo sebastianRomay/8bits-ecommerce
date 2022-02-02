@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './ItemCount.css';
 
 const ItemCount = ({initial, stock}) => {
   const [contador, setContador] = useState();
@@ -27,7 +28,7 @@ const restar = () => {
           <h6>{contador}</h6>
         <button className='btn btn-dark' onClick={sumar}>+</button>
     </div>
-    <button className='btn btn-outline-dark m-2'>Añadir al Carrito</button>
+    <button className='btn btn-outline-dark m-2 addCart' disabled >Añadir al Carrito</button>
     </>
   ) 
 };

@@ -13,8 +13,11 @@
     }
 }
 
+.addCart:hover {
+    cursor: not-allowed;
+}
+
 .card:hover {
-    cursor: pointer;
     transform: scale(1.03);
     box-shadow: 1px 2px 24px -3px rgba(0,0,0,0.69);
 -webkit-box-shadow: 1px 2px 24px -3px rgba(0,0,0,0.69);
