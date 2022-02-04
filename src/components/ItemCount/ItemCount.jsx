@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import BotonAgregar from '../AgregarCarrito/BotonAgregar';
 import './ItemCount.css';
 
 const ItemCount = ({initial, stock}) => {
   const [contador, setContador] = useState();
+  const [boton, setBoton] = useState(false);
 
   if(contador == undefined){
     setContador(parseInt(initial))
@@ -16,10 +18,21 @@ const ItemCount = ({initial, stock}) => {
 const restar = () => {
   if(contador !== 0){
     setContador(contador - 1)
-
   }
 }
 
+// const activar = () => {
+//   if(contador = 0){
+//     setBoton(!boton)
+  // } else {
+  //   setBoton(boton = false)
+  // }
+// }}
+
+
+const onAdd = () => {
+  alert(`Agregaste ${contador} productos al carrito`)
+}
 
   return (
     <>
@@ -28,7 +41,7 @@ const restar = () => {
           <h6>{contador}</h6>
         <button className='btn btn-dark' onClick={sumar}>+</button>
     </div>
-    <button className='btn btn-outline-dark m-2 addCart' disabled >Añadir al Carrito</button>
+    <BotonAgregar fn={onAdd} botonActivo={boton}/>
     </>
   ) 
 };
