@@ -1,20 +1,27 @@
-import ItemCount from '../../components/ItemCount/ItemCount';
 import './ItemListContainer.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ItemsList from '../../components/ItemsList/ItemsList';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+
+  const url = 'https://fakestoreapi.com/products';
+
+    const [productos, setProductos] = useState();
+
+    const fetchApi = async () =>{
+        const response = await fetch(url);
+        const responseJSON = await response.json()
+        setProductos(responseJSON)
+        console.log(productos)
+    }
+
+    useEffect(() => {
+      fetchApi();
+    }, []);
+
   return (
   <>
-    <div className="card m-3">
-        <img src={props.img} className="card-img-top" alt="..."/>
-        <div className="card-body d-flex justify-content-between">
-            <h5 className="card-title">{props.title}</h5>
-            <h5 className="card-text">$ {props.precio}</h5>
-        </div>
-        <ItemCount initial='1' stock='5'/>
-    </div>
-
+    <ItemsList products={productos}/>
   </>
   );
 };
