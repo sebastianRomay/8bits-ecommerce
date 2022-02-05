@@ -4,8 +4,8 @@ import './ItemCount.css';
 
 const ItemCount = ({initial, stock}) => {
   const [contador, setContador] = useState();
-  const [boton, setBoton] = useState(false);
-
+  const [boton, setBoton] = useState(true);
+  
   if(contador == undefined){
     setContador(parseInt(initial))
   }
@@ -13,21 +13,18 @@ const ItemCount = ({initial, stock}) => {
   const sumar = () => {
     if(contador < stock){
       setContador(contador + 1)
+      setBoton(false)
     }
 }
 const restar = () => {
+  if(contador <= 1) {
+    setBoton(true)
+  }
   if(contador !== 0){
     setContador(contador - 1)
+  } 
   }
-}
 
-// const activar = () => {
-//   if(contador = 0){
-//     setBoton(!boton)
-  // } else {
-  //   setBoton(boton = false)
-  // }
-// }}
 
 
 const onAdd = () => {
@@ -41,7 +38,7 @@ const onAdd = () => {
           <h6>{contador}</h6>
         <button className='btn btn-dark' onClick={sumar}>+</button>
     </div>
-    <BotonAgregar fn={onAdd} botonActivo={boton}/>
+    <BotonAgregar fn={onAdd} activar={boton}/>
     </>
   ) 
 };
