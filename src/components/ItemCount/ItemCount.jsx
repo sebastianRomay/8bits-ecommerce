@@ -38,7 +38,7 @@ const onAdd = () => {
           <h6>{contador}</h6>
         <button className='btn btn-dark' onClick={sumar}>+</button>
     </div>
-    <BotonAgregar fn={onAdd} activar={boton}/>
+    <BotonAgregar fn={onAdd} activar={boton} texto='Agregar Al carrito'/>
     </>
   ) 
 };

@@ -1,17 +1,14 @@
 import React from 'react';
 import Items from '../Items/Items';
+import Spinner from '../Spinner/Spinner';
 
 const ItemsList = ({products}) => {
-
+console.log(products)
 return (
 
 <>
         { !products ? 
-            <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
-            </div> 
+            <Spinner/>
 : 
         products.map(prod => {
             return (

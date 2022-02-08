@@ -1,6 +1,7 @@
 import NavBar from './components/Nav/NavBar';
 import Header from './components/Header/Header'
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 
 
 
@@ -15,6 +16,7 @@ const App = () => {
       <div className='d-flex justify-content-center m-5 flex-wrap'>
       <ItemListContainer/>
       </div>
+      <ItemDetailContainer/>
     </>
   )
 }
