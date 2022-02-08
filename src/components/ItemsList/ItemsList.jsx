@@ -1,5 +1,5 @@
 import React from 'react';
-import Items from '../Items/Items';
+import Item from '../Item/Item'
 import Spinner from '../Spinner/Spinner';
 
 const ItemsList = ({products}) => {
@@ -13,7 +13,7 @@ return (
         products.map(prod => {
             return (
 
-                <Items img={prod.image} precio={prod.price} title={prod.title}/>
+                <Item img={prod.image} precio={prod.price} title={prod.title}/>
 
                 )
 
