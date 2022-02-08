@@ -1,9 +1,10 @@
 import './NavBar.css';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
   return (
   <>
-    <a href="#" className="bi bi-cart"></a>
+    <Link to='/carrito' className="bi bi-cart"></Link>
   </>);
   };
 

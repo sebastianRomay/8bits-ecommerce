@@ -23,7 +23,6 @@ const ItemDetailContainer = () => {
   }, []);
   return (
     <>
-      <hr />
       <ItemDetail producto={producto} />
     </>
   );
