@@ -1,27 +1,26 @@
-import './ItemListContainer.css';
-import { useState, useEffect } from 'react';
-import ItemsList from '../../components/ItemsList/ItemsList';
+import "./ItemListContainer.css";
+import { useState, useEffect } from "react";
+import ItemsList from "../../components/ItemsList/ItemsList";
 
 const ItemListContainer = () => {
+  const url = "https://fakestoreapi.com/products";
 
-  const url = 'https://fakestoreapi.com/products';
+  const [productos, setProductos] = useState();
 
-    const [productos, setProductos] = useState();
+  const fetchApi = async () => {
+    const response = await fetch(url);
+    const responseJSON = await response.json();
+    setProductos(responseJSON);
+  };
 
-    const fetchApi = async () =>{
-        const response = await fetch(url);
-        const responseJSON = await response.json()
-        setProductos(responseJSON)
-    }
-
-    useEffect(() => {
-      fetchApi();
-    }, []);
+  useEffect(() => {
+    fetchApi();
+  }, []);
 
   return (
-  <>
-    <ItemsList products={productos}/>
-  </>
+    <>
+      <ItemsList products={productos} />
+    </>
   );
 };
 
