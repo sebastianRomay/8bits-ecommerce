@@ -1,10 +1,16 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { NavLink } from "react-router-dom";
+import swal from 'sweetalert';
+
 
 const Items = ({ img, precio, title, id }) => {
   const onAdd = (dato) => {
-    alert(`Agregaste ${dato} productos al carrito`);
+    swal(
+      `¡${dato} Producto/s agregado!`,
+      'Sigue comprando en nuestra tienda',
+      'success'
+    )
   };
 
   return (

@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "../Spinner/Spinner";
 import BotonAgregar from "../AgregarCarrito/BotonAgregar";
 import "./ItemDetail.css";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ producto }) => {
   const comprar = () => {
@@ -40,12 +41,14 @@ const ItemDetail = ({ producto }) => {
               </div>
               <div className="row mt-3">
                 <div className="col4">
-                <p class="bi bi-truck text-success h6"> Envio Gratis</p>
+                <p className="bi bi-truck text-success h6"> Envio Gratis</p>
                 </div>
               </div>
               <div className="row mt-3">
                 <div className="col-md-6 col-12">
-                  <BotonAgregar texto="Comprar" fn={comprar} />
+                <Link to="/compra">
+                  <BotonAgregar texto='Comprar'/>
+                </Link>
                 </div>
               </div>
             </div>
