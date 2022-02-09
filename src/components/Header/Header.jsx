@@ -1,4 +1,5 @@
 import "./Header.css";
+import React from 'react';
 
 const Header = () => {
   return (
@@ -13,11 +14,11 @@ const Header = () => {
         </div>
         {/* En este div van mis enlaces para crear cuenta o loguearse */}
         <div className="d-flex gap-4 align-items-center">
-          <a href="" className="bi bi-person-circle link-header">
+          <a href="#" className="bi bi-person-circle link-header">
             {" "}
             Crear cuenta
           </a>
-          <a href="" className="bi bi-box-arrow-in-right link-header">
+          <a href="#" className="bi bi-box-arrow-in-right link-header">
             {" "}
             Login
           </a>

@@ -1,13 +1,16 @@
 import React from "react";
 import Header from '../../components/Header/Header';
 import NavBar from '../../components/Nav/NavBar';
+import ItemListContainer from '../../containers/ItemListContainer/ItemListContainer';
 
 const Home = () => {
   return (
     <>
       <Header/>
       <NavBar/>
-      <h2>Pagina de inicio</h2>
+      <div className='d-flex justify-content-center m-5 flex-wrap'>
+      <ItemListContainer/>
+      </div>
     </>
   );
 };

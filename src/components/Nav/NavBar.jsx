@@ -1,6 +1,7 @@
 import "./NavBar.css";
 import CartWidget from "./CartWidget";
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 const NavBar = () => {
   return (
@@ -13,15 +14,9 @@ const NavBar = () => {
             8 Bits
           </Link>
           {/* Lista con los items del menu */}
-          <ul className="navbar-nav d-flex flex-row gap-5 menu-nav align-items-center">
-            <li className="nav-item">
-              <Link className="nav-link" to='/productos'>
-                Productos
-              </Link>
-            </li>
-            <li>
+          <ul className="navbar-nav d-flex flex-row gap-5 menu-nav align-items-center  w-100 justify-content-end">
+            <li className="mx-5">
             <CartWidget/>
-
             </li>
           </ul>
           

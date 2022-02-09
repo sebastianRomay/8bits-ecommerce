@@ -1,12 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import BotonAgregar from "../AgregarCarrito/BotonAgregar";
 import "./ItemCount.css";
+
 
 const ItemCount = ({ initial, stock, onAdd }) => {
   const [contador, setContador] = useState();
   const [boton, setBoton] = useState(true);
 
-  if (contador == undefined) {
+  if (contador === undefined) {
     setContador(parseInt(initial));
   }
 

@@ -11,13 +11,14 @@ const ItemDetail = ({ producto }) => {
   return (
     <>
       {!producto ? (
-        <Spinner />
+        <Spinner/>
       ) : (
-        <div className="container detalle mb-5">
-          <div className="row">
-            <div className="col-md-6 col-12 d-flex justify-content-center">
-              <img src={producto.image} alt="" className="w-75" />
+        <div className="container detalle mb-5 mt-5">
+          <div className="row mt-3">
+            <div className="col-md-4 col-12 d-flex justify-content-center">
+              <img src={producto.image} alt="" className="w-100" />
             </div>
+            
             <div className="container col-md-6 col-12">
               <div className="row">
                 <div className="col-12">
@@ -38,7 +39,12 @@ const ItemDetail = ({ producto }) => {
                 </div>
               </div>
               <div className="row mt-3">
-                <div className="col-6">
+                <div className="col4">
+                <p class="bi bi-truck text-success h6"> Envio Gratis</p>
+                </div>
+              </div>
+              <div className="row mt-3">
+                <div className="col-md-6 col-12">
                   <BotonAgregar texto="Comprar" fn={comprar} />
                 </div>
               </div>

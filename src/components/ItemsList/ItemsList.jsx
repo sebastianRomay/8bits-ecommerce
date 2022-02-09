@@ -3,7 +3,6 @@ import Item from "../Item/Item";
 import Spinner from "../Spinner/Spinner";
 
 const ItemsList = ({ products }) => {
-  console.log(products);
   return (
     <>
       {!products ? (
@@ -11,7 +10,7 @@ const ItemsList = ({ products }) => {
       ) : (
         products.map((prod) => {
           return (
-            <Item img={prod.image} precio={prod.price} title={prod.title} />
+            <Item img={prod.image} precio={prod.price} title={prod.title} id={prod.id}/>
           );
         })
       )}
