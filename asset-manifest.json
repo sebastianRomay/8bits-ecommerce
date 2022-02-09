@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-proyecto-ch/static/css/main.c4753de9.chunk.css",
+    "main.js": "/react-proyecto-ch/static/js/main.3505f2a0.chunk.js",
+    "main.js.map": "/react-proyecto-ch/static/js/main.3505f2a0.chunk.js.map",
+    "runtime~main.js": "/react-proyecto-ch/static/js/runtime~main.177a5b8b.js",
+    "runtime~main.js.map": "/react-proyecto-ch/static/js/runtime~main.177a5b8b.js.map",
+    "static/js/2.42bdab1f.chunk.js": "/react-proyecto-ch/static/js/2.42bdab1f.chunk.js",
+    "static/js/2.42bdab1f.chunk.js.map": "/react-proyecto-ch/static/js/2.42bdab1f.chunk.js.map",
+    "index.html": "/react-proyecto-ch/index.html",
+    "precache-manifest.fbe822f5a65fdfc1c0f687b4948d7fa8.js": "/react-proyecto-ch/precache-manifest.fbe822f5a65fdfc1c0f687b4948d7fa8.js",
+    "service-worker.js": "/react-proyecto-ch/service-worker.js",
+    "static/css/main.c4753de9.chunk.css.map": "/react-proyecto-ch/static/css/main.c4753de9.chunk.css.map",
+    "static/media/NavBar.css": "/react-proyecto-ch/static/media/Tungsten-Bold.561f38b1.ttf"
+  }
+}
