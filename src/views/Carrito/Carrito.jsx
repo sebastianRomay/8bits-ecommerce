@@ -1,16 +1,15 @@
-import React from "react";
-import Header from '../../components/Header/Header';
-import NavBar from '../../components/Nav/NavBar';
-import ItemDetailContainer from "../../containers/ItemDetailContainer/ItemDetailContainer";
+import React from 'react'
+import Header from '../../components/Header/Header'
+import NavBar from '../../components/Nav/NavBar'
 
 const Carrito = () => {
   return (
     <>
     <Header/>
     <NavBar/>
-      <ItemDetailContainer/>
+    
     </>
-  );
-};
+  )
+}
 
-export default Carrito;
+export default Carrito
