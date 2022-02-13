@@ -3,6 +3,7 @@ import Spinner from "../Spinner/Spinner";
 import BotonAgregar from "../AgregarCarrito/BotonAgregar";
 import "./ItemDetail.css";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ producto }) => {
   const comprar = () => {
@@ -44,13 +45,18 @@ const ItemDetail = ({ producto }) => {
                 <p className="bi bi-truck text-success h6"> Envio Gratis</p>
                 </div>
               </div>
-              <div className="row mt-3">
+              <div className="row">
+                <div className="col-md-6">
+                  <ItemCount/>
+                </div>
+              </div>
+              {/* <div className="row mt-3">
                 <div className="col-md-6 col-12">
                 <Link to="/compra">
                   <BotonAgregar texto='Comprar'/>
                 </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
