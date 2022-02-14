@@ -27,7 +27,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   };
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center gap-5 p-1">
+      <div className="d-flex justify-content-around align-items-center gap-5">
         <button className="btn btn-dark" onClick={restar}>
           -
         </button>

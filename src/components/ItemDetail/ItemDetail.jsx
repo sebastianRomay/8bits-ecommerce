@@ -28,8 +28,8 @@ const ItemDetail = ({ producto }) => {
       ) : (
         <div className="container detalle mb-5 mt-5">
           <div className="row mt-3">
-            <div className="col-md-4 col-12 d-flex justify-content-center">
-              <img src={producto.image} alt="" className="w-100" />
+            <div className="col-md-4 col-12 d-flex justify-content-center mb-3">
+              <img src={producto.image} alt="" className="w-100 altura" />
             </div>
             
             <div className="container col-md-6 col-12">
