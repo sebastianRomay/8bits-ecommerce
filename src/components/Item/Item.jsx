@@ -1,13 +1,21 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { NavLink } from "react-router-dom";
 import swal from 'sweetalert';
+import { CartContext } from "../../context/CartContext";
 
 
 const Items = ({ img, precio, title, id }) => {
-  const onAdd = (dato) => {
+
+  const cartContext = useContext(CartContext)
+  
+  const [carrito, addItem] = useState(cartContext)
+
+
+  const onAdd = (cantidad) => {
+    addItem(cantidad)
     swal(
-      `¡${dato} Producto/s agregado!`,
+      `¡${cantidad} Producto/s agregado!`,
       'Sigue comprando en nuestra tienda',
       'success'
     )

@@ -1,54 +1,58 @@
 import React, { createContext, useState } from "react";
 
-
+// Creacion de contexto
 export const CartContext = createContext(null);
+//
 
 const CartProvider = (props) => {
 
-    const [cart, setCart] = useState([]);
+    const [carrito, setCarrito] = useState([]);
     const [total, setTotal] = useState(0);
 
 
-    const addToCart = (item, qty) => {
-        if(cart.some(el => el.id === item.id)){
+    const addItem = (item, cantidad) => {
+        if(carrito.some(elemento => elemento.id === item.id)){
             
-            let index = cart.findIndex(el => el.id === item.id);
-            let product = cart[index];
-            product.qty = product.qty + qty;
+            let index = carrito.findIndex(elemento => elemento.id === item.id);
 
-            const newCart = [...cart];
-            newCart.splice( index, 1, product );
+            let producto = carrito[index];
 
-            setCart([ ...newCart ]);
+            producto.cantidad = producto.cantidad + cantidad;
+
+            const nuevoCarrito = [...carrito];
+
+            nuevoCarrito.splice( index, 1, producto );
+
+            setCarrito([ ...nuevoCarrito ]);
 
         }else{
-            let product = {...item, qty};
-            setCart([...cart, product ]);
+            let producto = {...item, cantidad};
+            setCarrito([...carrito, producto ]);
         }
     }
 
-    const deleteCartById = ( id ) => {
-        const newCart = [...cart];
-        let index = newCart.findIndex(el => el.id === id);
+    // const deleteCartById = ( id ) => {
+    //     const nuevoCarrito = [...cart];
+    //     let index = nuevoCarrito.findIndex(el => el.id === id);
         
-        newCart.splice( index, 1 );
+    //     nuevoCarrito.splice( index, 1 );
 
-        setCart([...newCart]);
-    }
+    //     setCart([...nuevoCarrito]);
+    // }
 
-    const deleteCart = () => {
-        setCart([]);
-    }
+    // const deleteCart = () => {
+    //     setCart([]);
+    // }
 
 
     return(
         <CartContext.Provider 
             value={{ 
-                        cart, 
-                        setCart,
-                        addToCart,
-                        deleteCartById,
-                        deleteCart, 
+                        carrito, 
+                        setCarrito,
+                        addItem,
+                        // deleteCartById,
+                        // deleteCart, 
                    }}
         >
             {props.children}

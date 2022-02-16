@@ -10,7 +10,7 @@ const ItemsList = ({ products }) => {
       ) : (
         products.map((prod) => {
           return (
-            <Item img={prod.image} precio={prod.price} title={prod.title} id={prod.id}/>
+            <Item img={prod.image} precio={prod.price} title={prod.title} id={prod.id} key={prod.id}/>
           );
         })
       )}

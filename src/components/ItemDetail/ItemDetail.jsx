@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Spinner from "../Spinner/Spinner";
 import BotonAgregar from "../AgregarCarrito/BotonAgregar";
 import "./ItemDetail.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import swal from "sweetalert";
 
