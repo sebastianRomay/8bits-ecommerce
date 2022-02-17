@@ -13,9 +13,11 @@ const CartProvider = (props) => {
     const addItem = (item, cantidad) => {
         if(carrito.some(elemento => elemento.id === item.id)){
             
+            
             let index = carrito.findIndex(elemento => elemento.id === item.id);
 
             let producto = carrito[index];
+            console.log(producto)
 
             producto.cantidad = producto.cantidad + cantidad;
 
@@ -31,18 +33,18 @@ const CartProvider = (props) => {
         }
     }
 
-    // const deleteCartById = ( id ) => {
-    //     const nuevoCarrito = [...cart];
-    //     let index = nuevoCarrito.findIndex(el => el.id === id);
+    const eliminarDeCarrito = ( id ) => {
+        const nuevoCarrito = [...carrito];
+        let index = nuevoCarrito.findIndex(el => el.id === id);
         
-    //     nuevoCarrito.splice( index, 1 );
+        nuevoCarrito.splice( index, 1 );
 
-    //     setCart([...nuevoCarrito]);
-    // }
+        setCarrito([...nuevoCarrito]);
+    }
 
-    // const deleteCart = () => {
-    //     setCart([]);
-    // }
+    const vaciarCarrito = () => {
+        setCarrito([]);
+    }
 
 
     return(
@@ -51,8 +53,8 @@ const CartProvider = (props) => {
                         carrito, 
                         setCarrito,
                         addItem,
-                        // deleteCartById,
-                        // deleteCart, 
+                        eliminarDeCarrito,
+                        vaciarCarrito, 
                    }}
         >
             {props.children}
