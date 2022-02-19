@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Spinner from "../Spinner/Spinner";
 import BotonAgregar from "../AgregarCarrito/BotonAgregar";
 import "./ItemDetail.css";
 import { NavLink } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import swal from "sweetalert";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ producto }) => {
   const [cantidad, setCantidad] = useState(null)
 
+  const cartContext = useContext(CartContext);
+  const {addItem} = cartContext;
 
   const onAdd = (cuantos) => {
     setCantidad(cuantos)
     swal('Producto añadido con exito', 'Finaliza tu compra clickeando el boton', 'success')
   };
-
-
-  // Agregue esta funcion al boton de terminar compra pero no me gusto como quedo, tengo que pulirlo por eso no la elimine, la dejo comentada, en caso de molestar la elimino sin problema :) 
-  // const terminarCompra = () => {
-  //   swal('Gracias por tu compra', 'Seras redirido al carrito', 'success')
-  // }
 
   return (
     <>
@@ -41,7 +38,7 @@ const ItemDetail = ({ producto }) => {
               <div className="row">
                 <div className="col-12">
                   <h2 className="text-dark">
-                    <span className="text-dark h4">USD</span> {producto.price}
+                    <span className="text-dark h4">$</span> {producto.price}
                     <span className="text-success h6">62%OFF</span>
                   </h2>
                 </div>

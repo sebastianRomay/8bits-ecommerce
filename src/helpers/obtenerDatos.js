@@ -1,4 +1,5 @@
 //importo los productos
+import swal from 'sweetalert';
 import { listaProductos } from '../data/productos';
 
 const obtenerPorId = (id, array) => array.find((elemento) => elemento.id === id);
@@ -17,14 +18,14 @@ const obtenerTodosLosProductos = async (setState) => {
     setState(resultado);
   } catch (error) {
     console.log(error);
-    alert('No podemos mostrar los productos en este momento');
+    swal('No podemos mostrar los productos en este momento', 'disculpe las molestias', 'error');
   }
 };
 
 //Async Await que setea mi hook de estado
 const obtenerProductoPorId = async (id, setState) => {
   try {
-    const resultado = await obtenerPorId;
+    const resultado = await obtenerProductos;
     setState(obtenerPorId(id, resultado));
   } catch (error) {
     console.log(error);
