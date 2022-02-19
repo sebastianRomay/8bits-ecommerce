@@ -7,6 +7,8 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   const [contador, setContador] = useState();
   const [boton, setBoton] = useState(true);
 
+
+
   if (contador === undefined) {
     setContador(parseInt(initial));
   }

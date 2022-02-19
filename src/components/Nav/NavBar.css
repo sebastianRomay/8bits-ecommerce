@@ -26,3 +26,9 @@ p {
     border-radius: 50%;
     font-size: .5rem;
 }
+
+.contador {
+    border-radius: 100%;
+    font-size: 1.1rem;
+    text-align: center;
+}

@@ -1,16 +1,25 @@
-import React from "react";
+import React,  {useEffect, useState} from "react";
 import Item from "../Item/Item";
 import Spinner from "../Spinner/Spinner";
+import {obtenerTodosLosProductos} from '../../helpers/obtenerDatos';
 
-const ItemsList = ({ products }) => {
+
+const ItemsList = () => {
+
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    obtenerTodosLosProductos(setProductos);
+  }, []);
+
   return (
     <>
-      {!products ? (
+      {!productos ? (
         <Spinner />
       ) : (
-        products.map((prod) => {
+        productos.map((item) => {
           return (
-            <Item img={prod.image} precio={prod.price} title={prod.title} id={prod.id} key={prod.id}/>
+            <Item item={item} key={item.id} />
           );
         })
       )}

@@ -13,8 +13,11 @@ const CartWidget = () => {
 
   return (
   <>
+  <div className='d-flex justify-content-center gap-1'>
+
     <Link to='/carrito' className="bi bi-cart"></Link>
-    <div className='contador text-light'>{carrito.length}</div>
+    <div className='contador text-light d-flex align-items-center'>{carrito.length}</div>
+  </div>
   </>);
   };
 

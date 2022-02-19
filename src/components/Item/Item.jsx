@@ -5,15 +5,14 @@ import swal from 'sweetalert';
 import { CartContext } from "../../context/CartContext";
 
 
-const Items = ({ img, precio, title, id }) => {
+const Items = ({ item }) => {
 
   const cartContext = useContext(CartContext)
-  
-  const [carrito, addItem] = useState(cartContext)
-
+  const [carrito, setCarrito] = useState(cartContext)
+  const {addItem} = useContext(CartContext)
 
   const onAdd = (cantidad) => {
-    addItem(cantidad)
+    addItem( item , cantidad )
     swal(
       `¡${cantidad} Producto/s agregado!`,
       'Sigue comprando en nuestra tienda',
@@ -24,16 +23,16 @@ const Items = ({ img, precio, title, id }) => {
   return (
     <>
       <div className="card m-3">
-        <NavLink to={`/item/${id}`} className="text-decoration-none text-dark">
-          <img src={img} className="card-img-top" alt="..." />
+        <NavLink to={`/item/${item.id}`} className="text-decoration-none text-dark">
+          <img src={item.image} className="card-img-top" alt="..." />
           <div className="card-body d-flex justify-content-center flex-column">
             <h6 className="card-text text-center bg-dark text-light">
-              USD {precio}
+              $ {item.price}
             </h6>
-            <h6 className="card-title text-center">{title}</h6>
+            <h6 className="card-title text-center">{item.title}</h6>
           </div>
         </NavLink>
-        <ItemCount initial="0" stock="5" onAdd={onAdd} />
+        <ItemCount initial="0" stock={item.stock} onAdd={onAdd} />
       </div>
     </>
   );
