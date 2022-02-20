@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext';
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
@@ -6,12 +6,19 @@ import BotonAgregar from '../AgregarCarrito/BotonAgregar';
 
 const Formulario = () => {
 
+    const [nombre, setNombre] = useState()
+
+    const obtenerNombre = (e) => {
+        let name = e.target.value
+        setNombre(name)
+    }
+
     const cartContext = useContext(CartContext);
     const { vaciarCarrito } = cartContext;
 
     const finCompra = () => {
         vaciarCarrito()
-        swal('Gracias por su compra', 'En breve sera contactado', 'success')
+        swal(`Gracias por su compra ${nombre}` , 'En breve sera contactado', 'success')
     }
 
 
@@ -22,7 +29,7 @@ const Formulario = () => {
 
         <div className="mb-3 col-md-6 col-12">
             <label for="exampleInputEmail1" className="form-label">Nombre y Apellido</label>
-            <input type="text" className="form-control" required/>
+            <input type="text" className="form-control" required onChange={obtenerNombre}/>
         </div>
         <div className="mb-3 col-md-6 col-12">
             <label for="exampleInputEmail1" className="form-label">Email</label>
@@ -33,7 +40,7 @@ const Formulario = () => {
             </div>
             <div className="row">
 
-            <div className="mb-3 col-md-6 col12">
+            <div className="mb-3 col-md-6 col-12">
             <label for="exampleInputPassword1" className="form-label">Telefono</label>
             <input type="number" className="form-control" id="exampleInputPassword1" required/>
         </div>
@@ -50,7 +57,7 @@ const Formulario = () => {
         </div>
         </div>
         <div className="row">
-            <div className="col-12">
+            <div className="col-3 mx-auto">
             <Link to="/">
                   <BotonAgregar texto='Finalizar Compra' fn={finCompra}/>
             </Link>

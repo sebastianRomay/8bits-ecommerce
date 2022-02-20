@@ -1,4 +1,10 @@
 .w-10 {
-    width: 5rem;
-    height: 3rem;
+    width: fit-content;
+    height: fit-content;
+}
+@media screen and (max-width: 500px){
+    .w-10 {
+        width: fit-content;
+        height: fit-content;
+    }
 }

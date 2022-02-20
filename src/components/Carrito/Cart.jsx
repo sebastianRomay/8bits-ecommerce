@@ -22,14 +22,21 @@ const Cart = () => {
         }))
           : <Spinner />}
         {carrito.length ? (<>
+        <div className='d-flex justify-content-center gap-3'>
+
+        
           <button
-            className="btn btn-outline-dark"
+            className="btn btn-outline-danger"
             onClick={vaciarCarrito}
           >Vaciar Carrito
           </button>
           <NavLink to='/compra'>
             <button className='btn btn-outline-success' >Terminar Compra</button>
           </NavLink>
+          <NavLink to='/'>
+            <button className='btn btn-outline-dark'>Seguir Comprando</button>
+          </NavLink>
+          </div>
           </>)
 
           :
