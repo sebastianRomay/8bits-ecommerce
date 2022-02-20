@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { NavLink } from "react-router-dom";
 import swal from 'sweetalert';
@@ -7,8 +7,6 @@ import { CartContext } from "../../context/CartContext";
 
 const Items = ({ item }) => {
 
-  const cartContext = useContext(CartContext)
-  const [carrito, setCarrito] = useState(cartContext)
   const {addItem} = useContext(CartContext)
 
   const onAdd = (cantidad) => {

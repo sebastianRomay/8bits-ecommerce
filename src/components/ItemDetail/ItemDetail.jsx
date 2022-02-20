@@ -1,17 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Spinner from "../Spinner/Spinner";
 import BotonAgregar from "../AgregarCarrito/BotonAgregar";
 import "./ItemDetail.css";
 import { NavLink } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import swal from "sweetalert";
-import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ producto }) => {
   const [cantidad, setCantidad] = useState(null)
 
-  const cartContext = useContext(CartContext);
-  const {addItem} = cartContext;
+  // const cartContext = useContext(CartContext);
 
   const onAdd = (cuantos) => {
     setCantidad(cuantos)
@@ -25,7 +23,7 @@ const ItemDetail = ({ producto }) => {
       ) : (
         <div className="container detalle mb-5 mt-5">
           <div className="row mt-3">
-            <div className="col-md-4 col-12 d-flex justify-content-center mb-3">
+            <div className="col-md-6 col-12 d-flex justify-content-center mb-3">
               <img src={producto.image} alt="" className="w-100 altura" />
             </div>
             

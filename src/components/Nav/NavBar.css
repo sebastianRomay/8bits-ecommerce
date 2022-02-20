@@ -29,6 +29,7 @@ p {
 
 .contador {
     border-radius: 100%;
-    font-size: 1.1rem;
+    font-size: .9rem;
     text-align: center;
+    font-family: 'Press Start 2p', cursive;
 }
