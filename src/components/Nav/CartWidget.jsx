@@ -8,15 +8,15 @@ const CartWidget = () => {
 
   const cartContext = useContext(CartContext);
 
-  const { carrito } = cartContext;
-
-
+  const { cantidadTotal } = cartContext;
+  
   return (
   <>
   <div className='d-flex justify-content-center gap-1'>
 
     <Link to='/carrito' className="bi bi-cart"></Link>
-    <div className='contador text-light d-flex align-items-center'>{carrito.length}</div>
+    {(cantidadTotal) ? <div className='contador text-light d-flex align-items-center'>{(cantidadTotal)}</div> : (null)}
+    
   </div>
   </>);
   };

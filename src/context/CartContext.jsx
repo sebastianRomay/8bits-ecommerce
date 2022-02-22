@@ -7,8 +7,16 @@ export const CartContext = createContext(null);
 const CartProvider = (props) => {
 
     const [carrito, setCarrito] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [cantidadTotal, setCantidadTotal] = useState(0);
 
     const addItem = (item, cantidad) => {
+
+        const copiaProducto = {...item};
+        copiaProducto.cantidad = cantidad;
+
+        setCantidadTotal((cantidadTotal + cantidad));
+        setTotal((total + (copiaProducto.price)* cantidad))
 
         if (carrito.some(elemento => elemento.id === item.id)) {
 
@@ -24,8 +32,6 @@ const CartProvider = (props) => {
 
             setCarrito([...nuevoCarrito]);
 
-            console.log(carrito)
-
         } else {
             let producto = { ...item, cantidad };
             setCarrito([...carrito, producto]);
@@ -33,7 +39,14 @@ const CartProvider = (props) => {
 
     }
 
-    const eliminarDeCarrito = ( id ) => {
+    const eliminarDeCarrito = ( id, cantidad, precio ) => {
+
+    let filtrarCarrito = carrito.filter(item => item.id !== id)
+    
+    setCarrito(filtrarCarrito)
+    setCantidadTotal(cantidadTotal - cantidad)
+    setTotal(total - (cantidad * precio))
+
     const nuevoCarrito = [...carrito];
     let index = nuevoCarrito.findIndex(elemento => elemento.id === id);
 
@@ -44,6 +57,8 @@ const CartProvider = (props) => {
 
     const vaciarCarrito = () => {
     setCarrito([]);
+    setCantidadTotal(0)
+    setTotal(0)
     }
 
 
@@ -55,6 +70,8 @@ const CartProvider = (props) => {
                 addItem,
                 eliminarDeCarrito,
                 vaciarCarrito, 
+                total,
+                cantidadTotal
             }}
         >
             {props.children}

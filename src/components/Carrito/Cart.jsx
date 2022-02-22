@@ -7,7 +7,7 @@ import Spinner from '../Spinner/Spinner';
 const Cart = () => {
 
   const cartContext = useContext(CartContext);
-  const { carrito, eliminarDeCarrito, vaciarCarrito } = cartContext;
+  const { carrito, eliminarDeCarrito, vaciarCarrito, total } = cartContext;
 
   return (
     <>
@@ -22,9 +22,9 @@ const Cart = () => {
         }))
           : <Spinner />}
         {carrito.length ? (<>
-        <div className='d-flex justify-content-center gap-3'>
-
-        
+          <p className="h5 text-center mb-3">Precio total: ${total}</p>
+        <div className='d-flex justify-content-center gap-3 mb-5'>
+          
           <button
             className="btn btn-outline-danger"
             onClick={vaciarCarrito}
