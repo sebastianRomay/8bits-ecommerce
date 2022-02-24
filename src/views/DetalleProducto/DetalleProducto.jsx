@@ -7,7 +7,7 @@ import ItemDetailContainer from "../../containers/ItemDetailContainer/ItemDetail
 const DetalleProducto = () => {
 
   let {id} = useParams()
-  id = parseInt(id)
+  // id = parseInt(id)
 
   return (
     <>

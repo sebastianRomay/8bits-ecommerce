@@ -7,6 +7,8 @@ import swal from "sweetalert";
 import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({ producto }) => {
+
+  
   const [cantidad, setCantidad] = useState(null)
 
   const cartContext = useContext(CartContext);

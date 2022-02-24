@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import {useParams} from 'react-router';
 import "./ItemDetailContainer.css";
-import {obtenerProductoPorId} from '../../helpers/obtenerDatos';
-import { getDocs, query, collection , where , orderBy} from 'firebase/firestore';
+import { getDocs, query, collection , where, doc } from 'firebase/firestore';
 import { db } from '../../firebase/firebaseConfig'
 
-const ItemDetailContainer = ({id}) => {
-  const [productos, setProductos] = useState();
-  // useEffect(() => {
-  //   obtenerProductoPorId(id, setProducto);
-  // }, []);
+const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [producto, setProducto] = useState([]);
+
   useEffect(() => {
     const obtenerProductos = async () => {
       const q = query(collection(db, 'productos'));
       const items = []
+      const refDoc = doc(q, id)
       const querySnapshot = await getDocs(q)
+
       querySnapshot.forEach((item)=>{
-        items.push({...item.data(), id: item.id})
-        
+        items.push({...item.data(), id})
       })
-      setProductos(items)
+      setProducto(items)
     }
     obtenerProductos()
-  }, [])
+  }, [id])
+
   return (
     <>
-      <ItemDetail producto={productos} />
+      <ItemDetail producto={producto} />
     </>
   );
 };
