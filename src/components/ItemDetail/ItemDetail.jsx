@@ -23,9 +23,7 @@ const ItemDetail = ({ producto }) => {
 
   return (
     <>
-      {!producto ? (
-        <Spinner />
-      ) : (
+      
         <div className="container detalle mb-5 mt-5">
           <div className="row mt-3">
             <div className="col-md-6 col-12 d-flex justify-content-center mb-3">
@@ -75,7 +73,7 @@ const ItemDetail = ({ producto }) => {
             </div>
           </div>
         </div>
-      )}
+      
     </>
   );
 };

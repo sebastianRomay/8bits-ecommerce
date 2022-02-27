@@ -6,14 +6,14 @@ import ItemDetailContainer from "../../containers/ItemDetailContainer/ItemDetail
 
 const DetalleProducto = () => {
 
-  let {id} = useParams()
-  // id = parseInt(id)
+  // let {id} = useParams()
+  // // id = parseInt(id)
 
   return (
     <>
     <Header/>
     <NavBar/>
-      <ItemDetailContainer id={id} />
+      <ItemDetailContainer />
     </>
   );
 };

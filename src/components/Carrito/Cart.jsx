@@ -7,7 +7,7 @@ import Spinner from '../Spinner/Spinner';
 const Cart = () => {
 
   const cartContext = useContext(CartContext);
-  const { carrito, eliminarDeCarrito, vaciarCarrito, total } = cartContext;
+  const { carrito, eliminarDeCarrito, vaciarCarrito, total} = cartContext;
 
   return (
     <>
