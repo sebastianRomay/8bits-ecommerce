@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext';
 import swal from 'sweetalert';
-import { Link } from 'react-router-dom';
-import BotonAgregar from '../AgregarCarrito/BotonAgregar';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebaseConfig';
 
